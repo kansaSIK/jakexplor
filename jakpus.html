@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelajahi Jakarta Pusat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS tambahan untuk tampilan header dan container di halaman detail */
+        .container {
+            padding-top: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .detail-header {
+            padding: 0 20px 10px 20px;
+        }
+        .detail-header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            color: #3e2671;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .back-link i {
+            margin-right: 8px;
+        }
+        
+        /* Pastikan card-container dan card mendapatkan style dari beranda.css */
+        /* Jika belum ada, Anda harus menambahkan gaya card yang sesuai di beranda.css */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="detail-header">
+            <a onclick="history.back()" class="back-link">
+                <i class="fas fa-arrow-left"></i> Kembali
+            </a>
+            <h1>Rekomendasi di Jakarta Pusat</h1>
+        </div>
+
+        <section class="recommended">
+            <h2>Recommended</h2>
+            <div class="cards-container" id="recommended-container-pusat">
+                
+                <div class="card" data-location="Monas">
+                    <img src="https://placehold.co/320x200/ffbb00/ffffff?text=Monas+Pusat" alt="Monumen Nasional" onerror="this.onerror=null;this.src='https://placehold.co/320x200/ffbb00/ffffff?text=Monas+Pusat'">
+                    <h3>Monas - Jakarta Pusat</h3>
+                    <p>Jl. Merdeka Selatan, Gambir...</p>
+                    <p class="description">Ikon kota Jakarta, melambangkan perjuangan Indonesia. Area terbuka yang luas dan bersejarah.</p>
+                </div>
+
+                <div class="card" data-location="Grand Indonesia">
+                    <img src="https://placehold.co/320x200/e03333/ffffff?text=Grand+Indonesia" alt="Grand Indonesia" onerror="this.onerror=null;this.src='https://placehold.co/320x200/e03333/ffffff?text=Grand+Indonesia'">
+                    <h3>Grand Indonesia - Jakarta Pusat</h3>
+                    <p>Jl. M.H. Thamrin No.1, Menteng...</p>
+                    <p class="description">Salah satu pusat perbelanjaan terbesar dan terlengkap di Jakarta, menawarkan pengalaman belanja mewah.</p>
+                </div>
+
+                <div class="card" data-location="Kota Tua">
+                    <img src="https://placehold.co/320x200/4c7c8c/ffffff?text=Kota+Tua" alt="Kota Tua" onerror="this.onerror=null;this.src='https://placehold.co/320x200/4c7c8c/ffffff?text=Kota+Tua'">
+                    <h3>Fatahillah Square - Jakarta Pusat</h3>
+                    <p>Jl. Pintu Besar Utara, Pinangsia...</p>
+                    <p class="description">Kawasan bersejarah Batavia lama, cocok untuk bersepeda dan menikmati suasana kolonial.</p>
+                </div>
+
+                <div class="card" data-location="Thamrin City">
+                    <img src="https://placehold.co/320x200/8c4c8c/ffffff?text=Thamrin+City" alt="Thamrin City" onerror="this.onerror=null;this.src='https://placehold.co/320x200/8c4c8c/ffffff?text=Thamrin+City'">
+                    <h3>Thamrin City - Jakarta Pusat</h3>
+                    <p>Jl. K.H. Mas Mansyur...</p>
+                    <p class="description">Populer sebagai pusat grosir batik dan busana Muslim. Destinasi belanja yang ramai.</p>
+                </div>
+                
+            </div>
+        </section>
+
+
+        <section class="cafe">
+            <h2>Cafe</h2>
+            <div class="cards-container" id="cafe-container-pusat">
+                <div class="card" data-cafe="Kopi Oey">
+                    <img src="https://placehold.co/200x120/333333/ffffff?text=Kopi+Oey" alt="Kopi Oey" onerror="this.onerror=null;this.src='https://placehold.co/200x120/333333/ffffff?text=Kopi+Oey'">
+                    <h3>Kopi Oey Sabang</h3>
+                </div>
+                <div class="card" data-cafe="Giyanti Coffee">
+                    <img src="https://placehold.co/200x120/555555/ffffff?text=Giyanti+Coffee" alt="Giyanti Coffee Roastery" onerror="this.onerror=null;this.src='https://placehold.co/200x120/555555/ffffff?text=Giyanti+Coffee'">
+                    <h3>Giyanti Coffee Roastery</h3>
+                </div>
+                <div class="card" data-cafe="Aksara">
+                    <img src="https://placehold.co/200x120/777777/ffffff?text=Aksara" alt="Aksara" onerror="this.onerror=null;this.src='https://placehold.co/200x120/777777/ffffff?text=Aksara'">
+                    <h3>Aksara Records & Cafe</h3>
+                </div>
+                </div>
+        </section>
+
+    </div>
+</body>
+</html>
