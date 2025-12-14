@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blok M - Jakarta Selatan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+    :root {
+        /* Color Palette - Brown Theme */
+        --light-brown: #F5E9DD;
+        --medium-brown: #D7CCC8;
+        --dark-brown: #8B6B61;
+        --deep-brown: #5D4037;
+        --accent-brown: #A1887F;
+        --text-dark: #3E2723;
+        --text-light: #8D6E63;
+        --white: #FFFFFF;
+        --shadow: rgba(93, 64, 55, 0.08);
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--light-brown);
+        color: var(--text-dark);
+        padding: 20px;
+        margin: 0;
+        line-height: 1.6;
+        font-weight: 400;
+    }
+
+    .detail-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: var(--white);
+        border-radius: 20px;
+        box-shadow: 0 10px 40px var(--shadow);
+        overflow: hidden;
+        padding: 0;
+    }
+
+    /* HEADER STYLES */
+    .detail-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 40px;
+        background: linear-gradient(135deg, var(--deep-brown), var(--dark-brown));
+        color: var(--white);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .back-link {
+        text-decoration: none;
+        color: var(--white);
+        font-size: 16px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        opacity: 0.9;
+        padding: 8px 16px;
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .back-link:hover {
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(-5px);
+    }
+
+    /* MAPS BUTTON STYLE */
+    .maps-button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 28px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        color: var(--white);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: 0.3px;
+    }
+
+    .maps-button:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .maps-button i {
+        font-size: 16px;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .wishlist-counter {
+        position: relative;
+    }
+
+    .wishlist-counter-btn {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        font-size: 18px;
+        color: var(--white);
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wishlist-counter-btn:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: scale(1.05);
+    }
+
+    .wishlist-counter-badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background: var(--accent-brown);
+        color: var(--white);
+        font-size: 11px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        border: 2px solid var(--deep-brown);
+    }
+
+    /* MAIN CONTENT */
+    .main-content {
+        display: flex;
+        padding: 50px;
+        gap: 50px;
+        margin-bottom: 0;
+    }
+
+    .main-info {
+        flex: 1;
+        display: flex;
+        gap: 40px;
+    }
+
+    .hero-image-container {
+        position: relative;
+        width: 400px;
+        height: 450px;
+        flex-shrink: 0;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+        box-shadow: 0 15px 35px rgba(93, 64, 55, 0.15);
+        transition: transform 0.5s ease;
+    }
+
+    .hero-image:hover {
+        transform: scale(1.02);
+    }
+
+    .venue-description {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .venue-description h1 {
+        font-size: 36px;
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: var(--deep-brown);
+        font-weight: 700;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: -0.5px;
+        line-height: 1.2;
+    }
+
+    .venue-location {
+        color: var(--text-light);
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--medium-brown);
+    }
+
+    .venue-location i {
+        color: var(--dark-brown);
+        font-size: 18px;
+    }
+
+    .long-description {
+        line-height: 1.7;
+        font-size: 16px;
+        color: var(--text-dark);
+        margin-bottom: 30px;
+        font-weight: 400;
+    }
+
+    /* WISHLIST STYLE */
+    .wishlist-section {
+        margin: 25px 0;
+        padding: 0;
+    }
+
+    .wishlist-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .wishlist-btn {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 32px;
+        background: linear-gradient(135deg, var(--dark-brown), var(--deep-brown));
+        color: var(--white);
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(139, 107, 97, 0.2);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .wishlist-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(139, 107, 97, 0.3);
+        background: linear-gradient(135deg, var(--deep-brown), #4E342E);
+    }
+
+    .wishlist-btn:active {
+        transform: translateY(-1px);
+    }
+
+    .wishlist-btn.added {
+        background: linear-gradient(135deg, var(--accent-brown), var(--dark-brown));
+        box-shadow: 0 5px 15px rgba(139, 107, 97, 0.2);
+    }
+
+    .wishlist-btn.added:hover {
+        background: linear-gradient(135deg, var(--dark-brown), var(--deep-brown));
+    }
+
+    .wishlist-info {
+        color: var(--text-light);
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        max-width: 250px;
+        line-height: 1.5;
+    }
+
+    .wishlist-info i {
+        color: var(--accent-brown);
+        font-size: 16px;
+        flex-shrink: 0;
+    }
+
+    /* MAPS MODAL STYLE */
+    .maps-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(62, 39, 35, 0.85);
+        backdrop-filter: blur(8px);
+        z-index: 2000;
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .maps-modal-content {
+        background: var(--white);
+        width: 90%;
+        max-width: 1000px;
+        height: 85vh;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 25px 60px rgba(62, 39, 35, 0.3);
+        border: 1px solid var(--medium-brown);
+    }
+
+    .maps-modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 30px;
+        background: linear-gradient(135deg, var(--deep-brown), var(--dark-brown));
+        color: var(--white);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .maps-modal-header h3 {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 22px;
+        font-weight: 600;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .maps-modal-header button {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--white);
+        font-size: 24px;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .maps-modal-header button:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: rotate(90deg);
+    }
+
+    .maps-modal-body {
+        height: calc(100% - 80px);
+        padding: 0;
+        position: relative;
+    }
+
+    .maps-iframe {
+        width: 100%;
+        height: calc(100% - 70px);
+        border: none;
+    }
+
+    .maps-links {
+        display: flex;
+        gap: 15px;
+        padding: 20px 30px;
+        background: var(--light-brown);
+        border-top: 1px solid var(--medium-brown);
+        justify-content: center;
+    }
+
+    .maps-link {
+        padding: 12px 24px;
+        background: var(--dark-brown);
+        color: var(--white);
+        text-decoration: none;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .maps-link:hover {
+        background: var(--deep-brown);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(93, 64, 55, 0.2);
+        color: var(--white);
+    }
+
+    .maps-link.google {
+        background: var(--accent-brown);
+    }
+
+    .maps-link.google:hover {
+        background: var(--dark-brown);
+    }
+
+    .maps-link.apple {
+        background: var(--text-dark);
+    }
+
+    .maps-link.apple:hover {
+        background: #2C1B1A;
+    }
+
+    .maps-link.waze {
+        background: #33CCFF;
+    }
+
+    .maps-link.waze:hover {
+        background: #29B6F6;
+    }
+
+    /* Highlight Tempat */
+    .highlight-menu {
+        padding: 50px;
+        padding-top: 30px;
+        background: var(--light-brown);
+        border-top: 1px solid var(--medium-brown);
+    }
+
+    .highlight-menu h2, .about-section h2 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: var(--deep-brown);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: -0.3px;
+    }
+
+    .highlight-cards {
+        display: flex;
+        gap: 25px;
+        overflow-x: auto;
+        padding: 20px 5px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--dark-brown) var(--medium-brown);
+    }
+
+    .highlight-cards::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .highlight-cards::-webkit-scrollbar-track {
+        background: var(--medium-brown);
+        border-radius: 10px;
+    }
+
+    .highlight-cards::-webkit-scrollbar-thumb {
+        background: var(--dark-brown);
+        border-radius: 10px;
+    }
+
+    .highlight-card {
+        flex: 0 0 260px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .highlight-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .highlight-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 0;
+        box-shadow: 0 10px 25px rgba(93, 64, 55, 0.15);
+        transition: all 0.3s ease;
+    }
+
+    .highlight-card:hover img {
+        box-shadow: 0 15px 35px rgba(93, 64, 55, 0.25);
+    }
+
+    /* About Section */
+    .about-section {
+        padding: 50px;
+        padding-top: 40px;
+        background: var(--white);
+        border-top: 1px solid var(--medium-brown);
+    }
+
+    .about-section p {
+        line-height: 1.8;
+        font-size: 17px;
+        color: var(--text-dark);
+        max-width: 800px;
+        margin: 0;
+    }
+
+    /* Notifikasi Wishlist */
+    .wishlist-notification {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        padding: 18px 25px;
+        background: var(--white);
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(93, 64, 55, 0.15);
+        display: none;
+        align-items: center;
+        gap: 12px;
+        z-index: 1000;
+        animation: slideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-left: 5px solid var(--dark-brown);
+        max-width: 350px;
+    }
+
+    .wishlist-notification.remove {
+        border-left-color: var(--accent-brown);
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+    }
+
+    .wishlist-notification i {
+        font-size: 22px;
+        color: var(--dark-brown);
+    }
+
+    .wishlist-notification.remove i {
+        color: var(--accent-brown);
+    }
+
+    .wishlist-notification span {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--text-dark);
+    }
+
+    hr {
+        border: none;
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--medium-brown), transparent);
+        margin: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1100px) {
+        .main-info {
+            flex-direction: column;
+        }
+        
+        .hero-image-container {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+        }
+        
+        .venue-description {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .detail-header {
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            padding: 25px 30px;
+        }
+        
+        .header-right {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .main-content {
+            padding: 40px 30px;
+        }
+        
+        .highlight-menu, .about-section {
+            padding: 40px 30px;
+        }
+        
+        .maps-modal-content {
+            width: 95%;
+            height: 80vh;
+        }
+    }
+
+    @media (max-width: 768px) {
+        body {
+            padding: 15px;
+        }
+        
+        .detail-container {
+            border-radius: 16px;
+        }
+        
+        .detail-header {
+            padding: 20px;
+        }
+        
+        .main-content {
+            padding: 30px 20px;
+            gap: 30px;
+        }
+        
+        .hero-image-container {
+            height: 350px;
+        }
+        
+        .venue-description h1 {
+            font-size: 30px;
+        }
+        
+        .wishlist-container {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .wishlist-info {
+            max-width: 100%;
+        }
+        
+        .maps-links {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .maps-link {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .highlight-menu, .about-section {
+            padding: 30px 20px;
+        }
+        
+        .highlight-card {
+            flex: 0 0 220px;
+        }
+        
+        .highlight-card img {
+            height: 160px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .detail-header {
+            padding: 20px 15px;
+        }
+        
+        .main-content {
+            padding: 25px 15px;
+        }
+        
+        .hero-image-container {
+            height: 280px;
+        }
+        
+        .venue-description h1 {
+            font-size: 26px;
+        }
+        
+        .wishlist-btn {
+            padding: 14px 24px;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .highlight-card {
+            flex: 0 0 180px;
+        }
+        
+        .highlight-card img {
+            height: 140px;
+        }
+        
+        .about-section p {
+            font-size: 16px;
+        }
+        
+        .wishlist-notification {
+            top: 20px;
+            right: 20px;
+            left: 20px;
+            max-width: none;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="detail-container">
+        <header class="detail-header">
+            <a href="beranda.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+            </a>
+            
+            <!-- Tombol Lihat Maps -->
+            <button id="view-maps-btn" class="maps-button">
+                <i class="fas fa-map-marked-alt"></i>
+                Lihat Lokasi di Peta
+            </button>
+            
+            <div class="header-right">
+                <div class="wishlist-counter">
+                    <button class="wishlist-counter-btn" title="Lihat Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-counter-badge">0</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Modal Maps -->
+        <div id="maps-modal" class="maps-modal">
+            <div class="maps-modal-content">
+                <div class="maps-modal-header">
+                    <h3>
+                        <i class="fas fa-map"></i>
+                        Lokasi Blok M - Jakarta Selatan
+                    </h3>
+                    <button id="close-maps-modal">&times;</button>
+                </div>
+                <div class="maps-modal-body">
+                    <!-- Google Maps Embed -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3966.1547651659716!2d106.7960897!3d-6.2433251!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f11a035ff483%3A0xd8c483ca69a8e81!2sTaman%20Literasi%20Martha%20Christina%20Tiahahu%2C%20Jakarta%20blok%20M!5e0!3m2!1sid!2sid!4v1765690745021!5m2!1sid!2sid"
+                        class="maps-iframe"
+                        allowfullscreen="" 
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    
+                    <!-- Tombol alternatif untuk membuka di aplikasi -->
+                    <div class="maps-links">
+                        <a href="https://maps.app.goo.gl/k66QNX2CxsANuewr8" target="_blank" class="maps-link google">
+                            <i class="fab fa-google"></i>
+                            Buka di Google Maps
+                        </a>
+                        <a href="https://maps.apple.com/?q=Blok+M+Square+Jakarta" target="_blank" class="maps-link apple">
+                            <i class="fab fa-apple"></i>
+                            Buka di Apple Maps
+                        </a>
+                        <a href="https://waze.com/ul?q=Blok%20M%20Square%20Jakarta" target="_blank" class="maps-link waze">
+                            <i class="fab fa-waze"></i>
+                            Buka di Waze
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notifikasi Wishlist -->
+        <div id="wishlist-notification" class="wishlist-notification">
+            <i class="fas fa-check-circle"></i>
+            <span>Berhasil ditambahkan ke wishlist!</span>
+        </div>
+
+        <section class="main-content">
+            <div class="main-info">
+                <div class="hero-image-container">
+                    <img src="Blok M Square, Jakarta Selatan.jpg" alt="Blok M Square" class="hero-image">
+                </div>
+                <div class="venue-description">
+                    <h1>Blok M - Jakarta Selatan</h1>
+                    <p class="venue-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Jl. Melawai V, Kebayoran Baru, Jakarta Selatan 12160
+                    </p>
+                    <p class="long-description">
+                        Tempat favorit untuk jajan dan mencari beragam pilihan restoran mewah. 
+                        Kawasan Blok M dikenal sebagai destinasi yang refreshing dengan restorannya 
+                        yang santai dan hidup. Blok M Square menawarkan pengalaman berbelanja dan 
+                        kuliner yang unik di jantung kota Jakarta Selatan.
+                    </p>
+                    
+                    <!-- SECTION WISHLIST -->
+                    <div class="wishlist-section">
+                        <div class="wishlist-container">
+                            <button id="add-to-wishlist" class="wishlist-btn">
+                                <i class="fas fa-plus"></i>
+                                <span>Tambahkan ke Wishlist</span>
+                            </button>
+                            <div class="wishlist-info">
+                                <i class="fas fa-info-circle"></i>
+                                Simpan tempat ini untuk dikunjungi nanti
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+
+        <section class="highlight-menu">
+            <h2>Highlight Tempat</h2>
+            <div class="highlight-cards">
+                <div class="highlight-card">
+                    <img src="Blok m (2).jpg" alt="Blok M Square">
+                </div>
+                <div class="highlight-card">
+                    <img src="M Bloc, Jakarta.jpg" alt="M Bloc Jakarta">     
+                </div>
+                <div class="highlight-card">
+                    <img src="Blok m (2).jpg" alt="Blok M Interior">
+                </div>
+                <div class="highlight-card">
+                    <img src="M Bloc, Jakarta.jpg" alt="Blok M Night View">     
+                </div>
+                <div class="highlight-card">
+                    <img src="Blok m (2).jpg" alt="Blok M Food Court">
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>Tentang Blok M</h2>
+            <p>
+                Blok M bukan hanya tentang makanan, tetapi juga tentang suasana. 
+                Anda akan menemukan campuran arsitektur lama dan baru, menciptakan 
+                tempat yang sempurna untuk bertemu teman, bekerja, atau sekadar 
+                menikmati sore hari. Kawasan ini telah menjadi ikon Jakarta Selatan 
+                sejak tahun 1970-an dan terus berkembang menjadi pusat perbelanjaan, 
+                kuliner, dan hiburan yang modern.
+            </p>
+        </section>
+    </div>
+
+    <script>
+        // WISHLIST SYSTEM - LocalStorage Based
+        document.addEventListener('DOMContentLoaded', function() {
+            // Data tempat ini
+            const placeData = {
+                id: 'blok-m-jakarta-selatan',
+                title: 'Blok M - Jakarta Selatan',
+                location: 'Jl. Melawai V, Kebayoran Baru, Jakarta Selatan',
+                description: 'Tempat favorit untuk jajan dan mencari beragam pilihan restoran mewah...',
+                image: 'Blok M Square, Jakarta Selatan.jpg',
+                category: 'Shopping & Dining',
+                addedDate: new Date().toISOString()
+            };
+
+            // Element references
+            const wishlistBtn = document.getElementById('add-to-wishlist');
+            const wishlistNotification = document.getElementById('wishlist-notification');
+            const wishlistCounterBadge = document.querySelector('.wishlist-counter-badge');
+            const wishlistCounterBtn = document.querySelector('.wishlist-counter-btn');
+            const mapsBtn = document.getElementById('view-maps-btn');
+            const mapsModal = document.getElementById('maps-modal');
+            const closeMapsModalBtn = document.getElementById('close-maps-modal');
+
+            // Initialize wishlist from localStorage
+            let wishlist = JSON.parse(localStorage.getItem('exploreJakartaWishlist')) || [];
+            
+            // Update UI based on current wishlist state
+            updateWishlistUI();
+
+            // Add to wishlist button click handler
+            wishlistBtn.addEventListener('click', function() {
+                const isInWishlist = wishlist.some(item => item.id === placeData.id);
+                
+                if (isInWishlist) {
+                    // Remove from wishlist
+                    removeFromWishlist(placeData.id);
+                    showNotification('Berhasil dihapus dari wishlist!', 'remove');
+                } else {
+                    // Add to wishlist
+                    addToWishlist(placeData);
+                    showNotification('Berhasil ditambahkan ke wishlist!', 'add');
+                }
+                
+                updateWishlistUI();
+            });
+
+            // Wishlist counter click handler (untuk membuka modal wishlist)
+            wishlistCounterBtn.addEventListener('click', function() {
+                showWishlistModal();
+            });
+
+            // Maps button click handler
+            mapsBtn.addEventListener('click', function() {
+                mapsModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Mencegah scroll di background
+            });
+
+            // Close maps modal
+            closeMapsModalBtn.addEventListener('click', function() {
+                mapsModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target === mapsModal) {
+                    mapsModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // FUNCTIONS
+            function addToWishlist(place) {
+                if (!wishlist.some(item => item.id === place.id)) {
+                    wishlist.push({
+                        ...place,
+                        addedDate: new Date().toISOString()
+                    });
+                    localStorage.setItem('exploreJakartaWishlist', JSON.stringify(wishlist));
+                }
+            }
+
+            function removeFromWishlist(placeId) {
+                wishlist = wishlist.filter(item => item.id !== placeId);
+                localStorage.setItem('exploreJakartaWishlist', JSON.stringify(wishlist));
+            }
+
+            function updateWishlistUI() {
+                const isInWishlist = wishlist.some(item => item.id === placeData.id);
+                
+                // Update button
+                if (isInWishlist) {
+                    wishlistBtn.innerHTML = '<i class="fas fa-check"></i><span>Sudah di Wishlist</span>';
+                    wishlistBtn.classList.add('added');
+                } else {
+                    wishlistBtn.innerHTML = '<i class="fas fa-plus"></i><span>Tambahkan ke Wishlist</span>';
+                    wishlistBtn.classList.remove('added');
+                }
+                
+                // Update counter
+                wishlistCounterBadge.textContent = wishlist.length;
+                
+                // Hide/show badge
+                wishlistCounterBadge.style.display = wishlist.length > 0 ? 'flex' : 'none';
+            }
+
+            function showNotification(message, type = 'add') {
+                const notification = wishlistNotification;
+                const icon = notification.querySelector('i');
+                const text = notification.querySelector('span');
+                
+                notification.className = 'wishlist-notification';
+                if (type === 'remove') {
+                    notification.classList.add('remove');
+                    icon.className = 'fas fa-times-circle';
+                } else {
+                    icon.className = 'fas fa-check-circle';
+                }
+                
+                text.textContent = message;
+                notification.style.display = 'flex';
+                
+                // Auto hide after 3 seconds
+                setTimeout(() => {
+                    notification.style.animation = 'fadeOut 0.5s ease forwards';
+                    setTimeout(() => {
+                        notification.style.display = 'none';
+                        notification.style.animation = '';
+                    }, 500);
+                }, 3000);
+            }
+
+            function showWishlistModal() {
+                // Create modal if it doesn't exist
+                let modal = document.getElementById('wishlist-modal');
+                if (!modal) {
+                    modal = document.createElement('div');
+                    modal.id = 'wishlist-modal';
+                    modal.className = 'wishlist-modal';
+                    modal.style.display = 'none';
+                    modal.innerHTML = `
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3><i class="fas fa-heart"></i> Daftar Wishlist Anda</h3>
+                                <button class="close-modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="wishlist-items"></div>
+                                <p class="empty-wishlist" style="text-align: center; color: var(--text-light); padding: 40px 20px;">
+                                    <i class="fas fa-heart-broken" style="font-size: 48px; margin-bottom: 15px; display: block; color: var(--medium-brown);"></i>
+                                    Wishlist Anda masih kosong
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="clear-wishlist-btn">
+                                    <i class="fas fa-trash"></i> Hapus Semua
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    document.body.appendChild(modal);
+                    
+                    // Add modal styles
+                    const modalStyles = document.createElement('style');
+                    modalStyles.textContent = `
+                        .wishlist-modal {
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: rgba(62, 39, 35, 0.85);
+                            backdrop-filter: blur(8px);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            z-index: 2000;
+                            animation: fadeIn 0.3s ease;
+                        }
+                        
+                        .wishlist-modal .modal-content {
+                            background: var(--white);
+                            width: 90%;
+                            max-width: 700px;
+                            max-height: 80vh;
+                            border-radius: 24px;
+                            overflow: hidden;
+                            box-shadow: 0 25px 60px rgba(62, 39, 35, 0.3);
+                            border: 1px solid var(--medium-brown);
+                        }
+                        
+                        .modal-header {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 25px 30px;
+                            background: linear-gradient(135deg, var(--deep-brown), var(--dark-brown));
+                            color: var(--white);
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                        }
+                        
+                        .modal-header h3 {
+                            margin: 0;
+                            display: flex;
+                            align-items: center;
+                            gap: 12px;
+                            font-size: 22px;
+                            font-weight: 600;
+                            font-family: 'Plus Jakarta Sans', sans-serif;
+                        }
+                        
+                        .modal-header button {
+                            background: rgba(255, 255, 255, 0.15);
+                            border: 1px solid rgba(255, 255, 255, 0.2);
+                            color: var(--white);
+                            font-size: 24px;
+                            cursor: pointer;
+                            width: 44px;
+                            height: 44px;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            transition: all 0.3s ease;
+                        }
+                        
+                        .modal-header button:hover {
+                            background: rgba(255, 255, 255, 0.25);
+                            transform: rotate(90deg);
+                        }
+                        
+                        .modal-body {
+                            padding: 0;
+                            max-height: 60vh;
+                            overflow-y: auto;
+                        }
+                        
+                        .wishlist-items {
+                            padding: 20px;
+                        }
+                        
+                        .wishlist-item {
+                            display: flex;
+                            align-items: center;
+                            gap: 15px;
+                            padding: 20px;
+                            border-bottom: 1px solid var(--medium-brown);
+                            transition: background 0.3s;
+                        }
+                        
+                        .wishlist-item:hover {
+                            background: var(--light-brown);
+                        }
+                        
+                        .item-number {
+                            background: var(--dark-brown);
+                            color: var(--white);
+                            width: 32px;
+                            height: 32px;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: 600;
+                            font-size: 14px;
+                        }
+                        
+                        .item-image {
+                            width: 70px;
+                            height: 70px;
+                            object-fit: cover;
+                            border-radius: 10px;
+                            box-shadow: 0 5px 15px rgba(93, 64, 55, 0.1);
+                        }
+                        
+                        .item-info {
+                            flex: 1;
+                        }
+                        
+                        .item-info h4 {
+                            margin: 0 0 8px 0;
+                            font-size: 16px;
+                            color: var(--deep-brown);
+                            font-weight: 600;
+                        }
+                        
+                        .item-info p {
+                            margin: 0 0 5px 0;
+                            color: var(--text-light);
+                            font-size: 14px;
+                        }
+                        
+                        .item-info small {
+                            color: var(--text-light);
+                            font-size: 12px;
+                        }
+                        
+                        .remove-item-btn {
+                            background: var(--accent-brown);
+                            color: var(--white);
+                            border: none;
+                            width: 36px;
+                            height: 36px;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            transition: background 0.3s;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 14px;
+                        }
+                        
+                        .remove-item-btn:hover {
+                            background: var(--dark-brown);
+                        }
+                        
+                        .modal-footer {
+                            padding: 20px 30px;
+                            border-top: 1px solid var(--medium-brown);
+                            text-align: right;
+                        }
+                        
+                        .clear-wishlist-btn {
+                            padding: 12px 28px;
+                            background: var(--accent-brown);
+                            color: var(--white);
+                            border: none;
+                            border-radius: 10px;
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            margin-left: auto;
+                            transition: all 0.3s ease;
+                            font-weight: 600;
+                            font-family: 'Plus Jakarta Sans', sans-serif;
+                        }
+                        
+                        .clear-wishlist-btn:hover {
+                            background: var(--dark-brown);
+                            transform: translateY(-2px);
+                            box-shadow: 0 5px 15px rgba(139, 107, 97, 0.2);
+                        }
+                        
+                        .empty-wishlist {
+                            font-size: 16px;
+                            font-weight: 500;
+                        }
+                    `;
+                    document.head.appendChild(modalStyles);
+                    
+                    // Add event listeners for the new modal
+                    modal.querySelector('.close-modal').addEventListener('click', function() {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    });
+                    
+                    modal.querySelector('.clear-wishlist-btn').addEventListener('click', function() {
+                        if (wishlist.length > 0) {
+                            if (confirm('Apakah Anda yakin ingin menghapus semua item dari wishlist?')) {
+                                wishlist = [];
+                                localStorage.setItem('exploreJakartaWishlist', JSON.stringify(wishlist));
+                                updateWishlistUI();
+                                modal.style.display = 'none';
+                                document.body.style.overflow = 'auto';
+                                showNotification('Wishlist berhasil dikosongkan!', 'remove');
+                            }
+                        }
+                    });
+                    
+                    // Close modal when clicking outside
+                    modal.addEventListener('click', function(event) {
+                        if (event.target === modal) {
+                            modal.style.display = 'none';
+                            document.body.style.overflow = 'auto';
+                        }
+                    });
+                }
+                
+                // Update modal content
+                const itemsContainer = modal.querySelector('.wishlist-items');
+                const emptyMsg = modal.querySelector('.empty-wishlist');
+                
+                if (wishlist.length === 0) {
+                    emptyMsg.style.display = 'block';
+                    itemsContainer.innerHTML = '';
+                } else {
+                    emptyMsg.style.display = 'none';
+                    itemsContainer.innerHTML = wishlist.map((item, index) => `
+                        <div class="wishlist-item">
+                            <div class="item-number">${index + 1}</div>
+                            <img src="${item.image}" alt="${item.title}" class="item-image">
+                            <div class="item-info">
+                                <h4>${item.title}</h4>
+                                <p>${item.location}</p>
+                                <small>Ditambahkan: ${new Date(item.addedDate).toLocaleDateString('id-ID')}</small>
+                            </div>
+                            <button class="remove-item-btn" data-id="${item.id}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    `).join('');
+                    
+                    // Add event listeners to remove buttons
+                    modal.querySelectorAll('.remove-item-btn').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const itemId = this.getAttribute('data-id');
+                            removeFromWishlist(itemId);
+                            updateWishlistUI();
+                            showWishlistModal(); // Refresh modal
+                            showNotification('Item dihapus dari wishlist!', 'remove');
+                        });
+                    });
+                }
+                
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Mencegah scroll di background
+            }
+        });
+    </script>
+</body>
+</html>
