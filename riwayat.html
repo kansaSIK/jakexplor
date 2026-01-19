@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Saya - Explore Jakarta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="beranda.css"> 
+    
+    <style>
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+        
+        .clear-btn {
+            background-color: #ff4757;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .clear-btn:hover {
+            background-color: #e84118;
+        }
+
+        .empty-state {
+            text-align: center;
+            margin-top: 50px;
+            color: #777;
+        }
+
+        .empty-state i {
+            font-size: 50px;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="checkbox" id="menu-toggle" hidden>
+    <label for="menu-toggle" class="menu-backdrop"></label>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h3>Explore Jakarta</h3>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="beranda.html"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="#"><i class="fas fa-user-circle"></i> Akun</a></li>
+            <li><a href="riwayat.html" class="active" style="background-color:#e9ecef; color:#6a11cb;"><i class="fas fa-history"></i> Riwayat Terakhir Dilihat</a></li>
+            <li><a href="#"><i class="fas fa-map-marker-alt"></i> Jelajahi Peta</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Pengaturan</a></li>
+        </ul>
+    </aside>
+
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+                <div class="user-info">
+                    <span>Riwayat Aktivitas</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="recommended">
+            <div class="history-header">
+                <h2>Terakhir Dilihat</h2>
+                <button id="clearHistory" class="clear-btn"><i class="fas fa-trash"></i> Hapus Semua</button>
+            </div>
+
+            <div class="cards-container" id="history-container"></div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById('history-container');
+            const clearBtn = document.getElementById('clearHistory');
+
+           
+            let history = JSON.parse(localStorage.getItem('viewHistory')) || [];
+
+            
+            function renderHistory() {
+                container.innerHTML = ''; 
+
+                if (history.length === 0) {
+                    container.innerHTML = `
+                        <div class="empty-state" style="width:100%;">
+                            <i class="fas fa-history"></i>
+                            <p>Belum ada riwayat. Jelajahi tempat menarik di Beranda!</p>
+                            <a href="beranda.html" style="color:#6a11cb; text-decoration:none; font-weight:bold;">Ke Beranda</a>
+                        </div>
+                    `;
+                    clearBtn.style.display = 'none'; 
+                    return;
+                }
+
+                clearBtn.style.display = 'block';
+
+                history.forEach(item => {
+                    const cardHTML = `
+                        <div class="card">
+                            <img src="${item.image}" alt="${item.title}" onerror="this.src='https://via.placeholder.com/300'">
+                            <h3>${item.title}</h3>
+                            <p>${item.location}</p>
+                            <p class="description" style="font-size:12px; color:#666; margin-top:5px;">${truncateText(item.description, 50)}</p>
+                            
+                            <div class="card-popup">
+                                <h4>${item.title}</h4>
+                                <p>${item.location}</p>
+                                <a href="${item.url}" class="detail-button">Lihat Lagi ></a>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += cardHTML;
+                });
+            }
+
+            function truncateText(text, limit) {
+                if (!text) return "";
+                return text.length > limit ? text.substring(0, limit) + "..." : text;
+            }
+
+            renderHistory();
+
+           
+            clearBtn.addEventListener('click', function() {
+                if(confirm("Yakin ingin menghapus semua riwayat?")) {
+                    localStorage.removeItem('viewHistory'); 
+                    history = []; 
+                    renderHistory(); 
+                }
+            });
+        });
+    </script>
+</body>
+</html>
