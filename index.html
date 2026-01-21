@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Jakarta - Web Developer Dewa</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      <link rel="stylesheet" href="style.css">
+
+
+ 
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle" hidden>
+    <label for="menu-toggle" class="menu-backdrop"></label>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h3>Explore Jakarta</h3>
+        </div>
+        <ul class="sidebar-menu">
+            <li>
+                <a href="index.html">
+                    <i class="fas fa-home"></i> Beranda
+                </a>
+            </li>
+            
+            <li>
+                <a href="#">
+                    <i class="fas fa-user-circle"></i> Akun
+                </a>
+            </li>
+      
+            <li>
+                <a href="riwayat.html">
+                    <i class="fas fa-history"></i> Riwayat Terakhir Dilihat
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-map-marker-alt"></i> Jelajahi Peta
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-cog"></i> Pengaturan
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <!-- Label yang terhubung ke checkbox untuk membuka menu -->
+                <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+                <div class="user-info">
+                    <span>Hi, There</span>
+                    <span>WELCOME</span>
+                </div>
+            </div>
+
+             <a href="wishlist.html" class="discussion-link" title="Places To Go">
+                <i class="fas fa-map-marked-alt"></i> Explore List
+            </a>
+
+            <div class="header-right">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Cari tempat kalcer" id="search-input">
+                </div>
+
+
+              
+            </div>
+        </header>
+
+        <div class="city-chips-container">
+    <a href="jakpus.html" class="city-chip">Jakarta Pusat</a>
+    <a href="jaktim.html" class="city-chip">Jakarta Timur</a>
+    <a href="jakbar.html" class="city-chip">Jakarta Barat</a>
+    <a href="jakut.html" class="city-chip">Jakarta Utara</a>
+    <a href="jaksel.html" class="city-chip">Jakarta Selatan</a>
+</div>
+
+           <div id="no-results-message" class="no-results">
+    <i class="fas fa-search"></i> Yah, lokasi yang kamu cari tidak ditemukan.
+</div>
+
+        <section class="recommended">
+            <h2>Recommended</h2>
+            <div class="cards-container" id="recommended-container">
+                <div class="card" data-location="Blok M">
+                    <img src="Blok M Square, Jakarta Selatan.jpg" alt="Blok M BCA" onerror="this.onerror=null;this.src='https://placehold.co/320x200/527598/ffffff?text=Blok+M'">
+                    <h3>Blok M - Jakarta Selatan</h3>
+                    <p>Jl. Sultan Hasanuddin Dalam...</p>
+                    <p class="description">Tempat favorit untuk jajan dan mencari beragam pilihan restoran mewah. Kawasan Blok M dikenal sebagai destinasi yang refreshing dengan restorannya yang santai dan hidup.</p>
+
+
+                    <div class="card-popup">
+                        <h4>Blok M - Jakarta Selatan</h4>
+                        <p>Jl. Sultan Hasanuddin Dalam...</p>
+                        <p class="popup-description">Tempat favorit untuk jajan dan mencari beragam pilihan restoran mewah. Kawasan Blok M dikenal sebagai destinasi yang refreshing dengan restorannya yang santai dan hidup.</p>
+                        <a href="blokm.html" class="detail-button">Lihat Detail &gt;</a>
+                    </div>
+                </div>
+                <div class="card" data-location="Dufan Ancol">
+                    <img src="Dufan.jpg" alt="Dufan Jakarta Utara" onerror="this.onerror=null;this.src='https://placehold.co/320x200/7a5298/ffffff?text=Dufan+Ancol'">
+                    <h3>Dufan - Jakarta Utara</h3>
+                    <p>Jl. Lodan timur No.7, Kl. 14/RW.10</p>
+                    <p class="description">Dunia Fantasi adalah sebuah Taman Hiburan yang terletak di kawasan Ancol, Impian Jaya. Ditempat ini, keluarga tercinta dapat menikmati wahana untuk rekreasi dan senang-senang.</p>
+
+
+                    <div class="card-popup">
+                        <h4>Dufan - Jakarta Utara</h4>
+                        <p>Jalan Lodan Timur No. 7, Ancol.</p>
+                        <p class="popup-description">Dunia Fantasi adalah sebuah Taman Hiburan yang terletak di kawasan Ancol, Impian Jaya. Ditempat ini, keluarga tercinta dapat menikmati wahana untuk rekreasi dan senang-senang.</p>
+                        <a href="dufann.html" class="detail-button">Lihat Detail &gt;</a>
+                    </div>
+                </div>
+                <div class="card" data-location="Cove PIK">
+                    <img src="Korean vibe.jpg" alt="Cove at Batavia - PIK" onerror="this.onerror=null;this.src='https://placehold.co/320x200/985286/ffffff?text=Cove+PIK'">
+                    <h3>Cove at Batavia - PIK</h3>
+                    <p>Pantai Golf Island, Jl. Pantai Indah...</p>
+                    <p class="description">Tempat ngumpul di batavia lebih asyik untuk jalan-jalan, menikmati berbagai pilihan makanan lezat. Salah satu tempat ini juga cocok untuk jalan-jalan dan ini saling dengan suasana nyaman dan modern.</p>
+               
+                    <div class="card-popup">
+                        <h4>Cove at Batavia</h4>
+                        <p>Jl. Pantai Indah Kapuk...</p>
+                        <p class="popup-description">Tempat ngumpul di batavia lebih asyik untuk jalan-jalan, menikmati berbagai pilihan makanan lezat. Salah satu tempat ini juga cocok untuk jalan-jalan dan ini saling dengan suasana nyaman dan modern.</p>
+                        <a href="cove.html" class="detail-button">Lihat Detail &gt;</a>
+                    </div>
+                </div>
+                <div class="card" data-location="One Satrio">
+                    <img src="Gelora Bung Karno Main Stadium.jpg" alt="One Satrio - Jakarta" onerror="this.onerror=null;this.src='https://placehold.co/320x200/529864/ffffff?text=One+Satrio'">
+                    <h3>Gelora Bung Karno - Jakarta Selatan</h3>
+                    <p>Jl. Pintu Satu Senayan...</p>
+                    <p class="description">Pusat gaya hidup modern di pusat kota yang menawarkan berbagai restoran, kafe, dan toko-toko trendi. Cocok untuk bersantai dan bertemu teman.</p>
+               
+                    <div class="card-popup">
+                        <h4>GBK</h4>
+                        <p>Jl. Pintu Satu Senayan...</p>
+                        <p class="popup-description">Tempat para pelari kalcer</p>
+                        <a href="gbk.html" class="detail-button">Lihat Detail &gt;</a>
+                    </div>
+                </div>
+
+
+                <div class="card" data-location="City Walk Sudirman">
+                    <img src="Kota Tua Jakarta.jpg" alt="City Walk Sudirman" onerror="this.onerror=null;this.src='https://placehold.co/320x200/988652/ffffff?text=City+Walk'">
+                    <h3>Kota Tua - Jakarta Barat</h3>
+                    <p> Jl Kalibesar Timur ...</p>
+                    <p class="description">Pusat perbelanjaan dan kuliner yang nyaman di jantung kawasan bisnis Jakarta. Menyediakan berbagai toko, restoran, dan bioskop.</p>
+               
+                    <div class="card-popup">
+                        <h4>Kota Tua</h4>
+                        <p>Jl Kalibesar Timur ...</p>
+                        <p class="popup-description">Pusat perbelanjaan dan kuliner yang nyaman di jantung kawasan bisnis Jakarta. Menyediakan berbagai toko, restoran, dan bioskop.</p>
+                        <a href="kotu.html" class="detail-button">Lihat Detail &gt;</a>
+                    </div>    
+                </div>
+            </div>
+        </section>
+        <section class="cafe">
+            <h2>Cafe</h2>
+            <div class="cards-container" id="cafe-container">
+                <div class="card" data-cafe="Langit Seduh Rooftop">
+                    <img src="Langit Seduh, Jakarta.jpg" alt="Langit Seduh Rooftop" onerror="this.onerror=null;this.src='https://placehold.co/220x190/333333/ffffff?text=Langit+Seduh'">
+                    <h3>Langit Seduh Rooftop</h3>
+
+                     <div class="card-popup">
+    <h4>Lihat di Maps</h4>
+    <p class="popup-description">Untuk info lebih detail, klik tombol di bawah ini:</p>
+    
+    <div class="map-container">
+       
+    </div>
+
+    <a href= "https://maps.app.goo.gl/vR9ZwJmT4jC3x9CV6"
+       target="_blank" 
+       class="detail-button">
+       Lihat Detail di Maps >
+    </a>
+</div>
+                </div>
+                <div class="card" data-cafe="Giyanti Coffee Roastery">
+                    <img src="giyanti.jpg" alt="Giyanti Coffee Roastery" onerror="this.onerror=null;this.src='https://placehold.co/220x190/555555/ffffff?text=Giyanti+Coffee'">
+                    <h3>Giyanti Coffee Roastery - Menteng</h3>
+
+                     <div class="card-popup">
+    <h4>Lihat di Maps</h4>
+    <p class="popup-description">Untuk info lebih detail, klik tombol di bawah ini:</p>
+    
+    <div class="map-container">
+       
+    </div>
+
+    <a href= "https://maps.app.goo.gl/PJr7dx1kFtT4VyuZ7"
+       target="_blank" 
+       class="detail-button">
+       Lihat Detail di Maps >
+    </a>
+</div>
+                </div>
+                <div class="card" data-cafe="Second Floor Coffee">
+                    <img src="second.jpeg" alt="Second Floor Coffee Menteng" onerror="this.onerror=null;this.src='https://placehold.co/220x190/777777/ffffff?text=Second+Floor'">
+                    <h3>Second Floor Coffee - Menteng</h3>
+
+                     <div class="card-popup">
+    <h4>Lihat di Maps</h4>
+    <p class="popup-description">Untuk info lebih detail, klik tombol di bawah ini:</p>
+    
+    <div class="map-container">
+       
+    </div>
+
+    <a href= "https://share.google/jj64N035eASW7olW8"
+       target="_blank" 
+       class="detail-button">
+       Lihat Detail di Maps >
+    </a>
+</div>
+                </div>
+                <div class="card" data-cafe="Livingstone SCBD">
+                    <img src="liv.jpeg" alt="Livingstone SCBD" onerror="this.onerror=null;this.src='https://placehold.co/220x190/999999/ffffff?text=Livingstone'">
+                    <h3>Livingstone SCBD</h3>
+
+                     <div class="card-popup">
+    <h4>Lihat di Maps</h4>
+    <p class="popup-description">Untuk info lebih detail, klik tombol di bawah ini:</p>
+    
+    <div class="map-container">
+       
+    </div>
+
+    <a href= "https://share.google/RXK8qnnakiLXSplmR"
+       target="_blank" 
+       class="detail-button">
+       Lihat Detail di Maps >
+    </a>
+</div>
+                </div>
+                <div class="card" data-cafe="Scarlett's Cafe">
+                    <img src="scarlet.jpeg" alt="Scarlett's Cafe, Senopati" onerror="this.onerror=null;this.src='https://placehold.co/220x190/aaaaaa/ffffff?text=Scarletts+Cafe'">
+                    <h3>Scarlett's Cafe - PIK</h3>
+
+                     <div class="card-popup">
+    <h4>Lihat di Maps</h4>
+    <p class="popup-description">Untuk info lebih detail, klik tombol di bawah ini:</p>
+    
+    <div class="map-container">
+       
+    </div>
+
+    <a href= "https://share.google/c0n1zNLDRjLWeIGJt"
+       target="_blank" 
+       class="detail-button">
+       Lihat Detail di Maps >
+    </a>
+</div>
+                </div>
+                <div class="card" data-cafe="Djournal Coffe">
+                    <img src="dj.jpeg" alt="Scarlett's Cafe, Senopati" onerror="this.onerror=null;this.src='https://placehold.co/220x190/aaaaaa/ffffff?text=Scarletts+Cafe'">
+                    <h3>Djournal Coffe</h3>
+
+                     <div class="card-popup">
+    <h4>Lihat di Maps</h4>
+    <p class="popup-description">Untuk info lebih detail, klik tombol di bawah ini:</p>
+    
+    <div class="map-container">
+       
+    </div>
+
+    <a href= "https://share.google/YAKg32kuBkwdK1ZLH"
+       target="_blank" 
+       class="detail-button">
+       Lihat Detail di Maps >
+    </a>
+</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="mobile-modal-container" class="mobile-modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modal-body"></div>
+    </div>
+</div>
+
+</body>
+  <script src="script.js"></script>
+</html>
+ 
